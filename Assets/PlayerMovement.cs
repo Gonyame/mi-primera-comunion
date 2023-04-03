@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Weapon Settings")]
     public WeaponController weaponController;
     public float weaponRange;
+    public GameObject weaponHolder;
 
     private void Awake()
     {
@@ -53,8 +54,11 @@ public class PlayerController : MonoBehaviour
             //pick up the weapon
             weaponController.PickedUp = true;
 
-            //set the weapon's parent to the player
-            weaponController.transform.SetParent(transform);
+            //set the weapon's parent to the player weaponholder
+            weaponController.transform.SetParent(weaponHolder.transform);
+
+            //move the weapon to the weaponholder
+            weaponController.transform.position = weaponHolder.transform.position;
         }
     }
 

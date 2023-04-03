@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
 
+    [SerializeField] private Animator anim;
+
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private bool isDashing;
@@ -27,11 +29,14 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
+        anim.SetBool("Moving", moveDirection != Vector2.zero);
+
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimeLeft <= 0f)
         {
             isDashing = true;
             dashTimeLeft = dashDuration;
             dashCooldownTimeLeft = dashCooldown;
+            anim.SetTrigger("dash");
         }
 
         if (isDashing)
@@ -46,6 +51,16 @@ public class PlayerController : MonoBehaviour
         if (dashCooldownTimeLeft > 0f)
         {
             dashCooldownTimeLeft -= Time.deltaTime;
+        }
+
+        //flip the character
+        if (moveDirection.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (moveDirection.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         //if the player presses the pickup button and is in range of a weapon pickup

@@ -14,28 +14,47 @@ public class WeaponController : MonoBehaviour
     public bool PickedUp = false;
     
     
+    
+    
+
+    void Start()
+    {
+        
+    }
 
     void Update()
     {
         if (PickedUp == true)
         {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = transform.position.z;
+
+            transform.up = mousePos - transform.position;
+
             if (Input.GetButtonDown("Fire1") && bulletCount > 0)
-        {
-            // Fire a bullet
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
-            
-            bulletCount--;
-            
-            if (bulletCount == 0)
             {
-               Debug.Log("Out of ammo"); 
+                Shoot(mousePos - transform.position);
             }
-        }
         
-        timer += Time.deltaTime;
+            timer += Time.deltaTime;
         }
+
         
+
+    }
+
+    public void Shoot(Vector3 direction)
+    {
+        // Fire a bullet
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
+            
+        bulletCount--;
+            
+        if (bulletCount == 0)
+        {
+           Debug.Log("Out of ammo"); 
+        }
     }
 }
 

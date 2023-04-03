@@ -737,7 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletCount: 2
   bulletSpeed: 10
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8042419289804033038, guid: 74968db348a319943b1d8ed1e1830b04, type: 3}
   timer: 0
   PickedUp: 0
 --- !u!4 &953540805

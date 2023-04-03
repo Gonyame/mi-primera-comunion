@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = transform.position.z;
 
-            transform.up = mousePos - transform.position;
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
 
             if (Input.GetButtonDown("Fire1") && bulletCount > 0)
             {
@@ -46,8 +46,8 @@ public class WeaponController : MonoBehaviour
     public void Shoot(Vector3 direction)
     {
         // Fire a bullet
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
             
         bulletCount--;
             

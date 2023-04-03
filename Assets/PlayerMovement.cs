@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private float dashTimeLeft;
     private float dashCooldownTimeLeft;
 
+    [Header("Weapon Settings")]
+    public WeaponController weaponController;
+    public float weaponRange;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +45,16 @@ public class PlayerController : MonoBehaviour
         if (dashCooldownTimeLeft > 0f)
         {
             dashCooldownTimeLeft -= Time.deltaTime;
+        }
+
+        //if the player presses the pickup button and is in range of a weapon pickup
+        if (Input.GetKeyDown(KeyCode.E) && weaponController.PickedUp == false && Vector2.Distance(transform.position, weaponController.transform.position) < weaponRange)
+        {
+            //pick up the weapon
+            weaponController.PickedUp = true;
+
+            //set the weapon's parent to the player
+            weaponController.transform.SetParent(transform);
         }
     }
 

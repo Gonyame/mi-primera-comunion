@@ -10,8 +10,8 @@ public class WeaponController : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float timer = 0f;
-
     public bool PickedUp = false;
+    public GameObject Door;
     
     
     
@@ -37,6 +37,11 @@ public class WeaponController : MonoBehaviour
             }
         
             timer += Time.deltaTime;
+
+            if (Door != null && PickedUp)
+            {
+                Door.SetActive(false); // Deactivate the door
+            }
         }
 
         

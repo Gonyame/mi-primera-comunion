@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;
     private float dashTimeLeft;
     private float dashCooldownTimeLeft;
+
+    //unity event
+    public UnityEvent OnDash;
 
     private void Awake()
     {
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour
             dashTimeLeft = dashDuration;
             dashCooldownTimeLeft = dashCooldown;
             anim.SetTrigger("dash");
+            OnDash.Invoke();
         }
 
         if (isDashing)

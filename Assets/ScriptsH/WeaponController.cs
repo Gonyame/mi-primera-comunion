@@ -12,9 +12,8 @@ public class WeaponController : MonoBehaviour
     public float timer = 0f;
     public bool PickedUp = false;
     public GameObject Door;
-    
-    
-    
+
+    [SerializeField] private Animator anim;
     
 
     void Start()
@@ -53,12 +52,15 @@ public class WeaponController : MonoBehaviour
         // Fire a bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
+
+        anim.SetTrigger("Shoot");
             
         bulletCount--;
             
         if (bulletCount == 0)
         {
-           Debug.Log("Out of ammo"); 
+            // Destroy the weapon add a delay
+            Destroy(gameObject, 1f);
         }
     }
 }

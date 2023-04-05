@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fondo
+    uniqueID: 393889755
+    locked: 0
+  - name: Piso
+    uniqueID: 2167124075
+    locked: 0
+  - name: Paredes
+    uniqueID: 2380148735
+    locked: 0
   - name: Player
     uniqueID: 655121547
     locked: 0

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spikes
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Paredes
     uniqueID: 2380148735
+    locked: 0
+  - name: Trampas
+    uniqueID: 546909151
     locked: 0
   - name: Player
     uniqueID: 655121547

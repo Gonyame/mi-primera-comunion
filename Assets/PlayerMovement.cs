@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 1f;
 
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject spawnpoint;
+    private bool morido;
 
     private Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float dashCooldownTimeLeft;
 
     //unity event
-    public UnityEvent OnDash;
+    public UnityEvent OnDash, OnDeadSpikes;
 
     private void Awake()
     {
@@ -26,41 +28,44 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-
-        anim.SetBool("Moving", moveDirection != Vector2.zero);
-
-        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimeLeft <= 0f)
+        if (!morido)
         {
-            isDashing = true;
-            dashTimeLeft = dashDuration;
-            dashCooldownTimeLeft = dashCooldown;
-            anim.SetTrigger("dash");
-            OnDash.Invoke();
-        }
+            moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
-        if (isDashing)
-        {
-            dashTimeLeft -= Time.deltaTime;
-            if (dashTimeLeft <= 0f)
+            anim.SetBool("Moving", moveDirection != Vector2.zero);
+
+            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimeLeft <= 0f)
             {
-                isDashing = false;
+                isDashing = true;
+                dashTimeLeft = dashDuration;
+                dashCooldownTimeLeft = dashCooldown;
+                anim.SetTrigger("dash");
+                OnDash.Invoke();
             }
-        }
 
-        if (dashCooldownTimeLeft > 0f)
-        {
-            dashCooldownTimeLeft -= Time.deltaTime;
-        }
+            if (isDashing)
+            {
+                dashTimeLeft -= Time.deltaTime;
+                if (dashTimeLeft <= 0f)
+                {
+                    isDashing = false;
+                }
+            }
 
-        //flip the character
-        if (moveDirection.x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (moveDirection.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (dashCooldownTimeLeft > 0f)
+            {
+                dashCooldownTimeLeft -= Time.deltaTime;
+            }
+
+            //flip the character
+            if (moveDirection.x > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (moveDirection.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
 
@@ -69,5 +74,27 @@ public class PlayerController : MonoBehaviour
         rb.velocity = isDashing ? moveDirection * dashSpeed : moveDirection * moveSpeed;
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Spikes"))
+        {
+            muerteSpikes();
+        }
+    }
 
+    private void muerteSpikes()
+    {
+        morido = true;
+        Debug.Log("Moriste por spikes");
+        anim.SetBool("dead", morido);
+        OnDeadSpikes.Invoke();
+        Invoke("revivir", 4f);
+    }
+
+    private void revivir()
+    {
+        morido = false;
+        anim.SetBool("dead", morido);
+        transform.position = spawnpoint.transform.position;
+    }
 }

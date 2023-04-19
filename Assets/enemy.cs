@@ -22,7 +22,6 @@ public class enemy : MonoBehaviour
         {
             isFollowing = false;
         }
-
         if (isFollowing)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

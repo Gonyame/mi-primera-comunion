@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -103,13 +104,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            muerteSpikes();
+        }
+    }
+
     private void muerteSpikes()
     {
-        morido = true;
-        Debug.Log("Moriste por spikes");
-        anim.SetBool("dead", morido);
-        OnDeadSpikes.Invoke();
-        Invoke("revivir", 4f);
+        if (!isDashing)
+        {
+            morido = true;
+            moveDirection= Vector3.zero;
+            Debug.Log("Moriste por spikes");
+            anim.SetBool("dead", morido);
+            OnDeadSpikes.Invoke();
+            Invoke("revivir", 4f);
+        }
     }
 
     private void revivir()

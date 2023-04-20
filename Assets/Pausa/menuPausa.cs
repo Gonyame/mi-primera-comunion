@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menuPausa : MonoBehaviour
 {
@@ -36,5 +37,16 @@ public class menuPausa : MonoBehaviour
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         MenuPausa.SetActive(false);
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Jaz");
+    }
+
+    public void Quit()
+    {
+        Debug.Log("exit");
+        Application.Quit();
     }
 }

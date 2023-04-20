@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spikes
+  - oso
   layers:
   - Default
   - TransparentFX

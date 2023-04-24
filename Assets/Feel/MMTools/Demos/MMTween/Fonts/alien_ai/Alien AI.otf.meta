@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: ffd7a0a1ccf71ab4cadcf5ad3ad9bb90
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Alien AI
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0cc9d9e2add499a4bb74d3332b1752fb, type: 3}
+  - {fileID: 12800000, guid: b517b8db3adfdf7479eecfddb55f843d, type: 3}
+  - {fileID: 12800000, guid: 50d0d038a1fd5a540b0b2b7496648979, type: 3}
+  - {fileID: 12800000, guid: a30ed8897cfb5a748849806fd80d9490, type: 3}
+  - {fileID: 12800000, guid: a4296b0c32810cb499790d398d02dd26, type: 3}
+  - {fileID: 12800000, guid: b14981f09f9d1c841b9c962e3ee2a341, type: 3}
+  - {fileID: 12800000, guid: 27489e199e2dd6c4fa22fc3f1d5497e4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

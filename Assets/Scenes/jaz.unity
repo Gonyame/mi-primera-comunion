@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
+  m_sharedMaterial: {fileID: 5420998670348751899, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -612,8 +612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 140}
-  m_SizeDelta: {x: 394.8271, y: 152.8167}
+  m_AnchoredPosition: {x: -0, y: 184}
+  m_SizeDelta: {x: 745.029, y: 216.227}
   m_Pivot: {x: 0.6216371, y: -0.00000020861626}
 --- !u!114 &921720050
 MonoBehaviour:
@@ -635,10 +635,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Serbia
+  m_text: S  E  R  B  I  A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 693430919429cff4d9e10f1225ca56c8, type: 2}
-  m_sharedMaterial: {fileID: -2935581447736933011, guid: 693430919429cff4d9e10f1225ca56c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
+  m_sharedMaterial: {fileID: 5420998670348751899, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 1516640793}
   - component: {fileID: 1516640792}
   - component: {fileID: 1516640791}
+  - component: {fileID: 1516640794}
   m_Layer: 5
   m_Name: play
   m_TagString: Untagged
@@ -749,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -27}
+  m_AnchoredPosition: {x: 0.0017713, y: -103}
   m_SizeDelta: {x: 389.0865, y: 101.4917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516640791
@@ -846,6 +847,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516640789}
   m_CullTransparentMesh: 1
+--- !u!95 &1516640794
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516640789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2333ac3eeda1f5f459df2a57c6e99196, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1562804869
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0017943, y: -209}
+  m_AnchoredPosition: {x: 0.000007558, y: -292}
   m_SizeDelta: {x: 389.09, y: 94.6304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562804871
@@ -1119,8 +1140,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
+  m_sharedMaterial: {fileID: 5420998670348751899, guid: 11eb53f5024db1c43828ee7d3ae8320d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

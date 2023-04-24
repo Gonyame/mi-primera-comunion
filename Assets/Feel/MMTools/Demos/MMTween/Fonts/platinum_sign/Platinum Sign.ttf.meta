@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f3458628326f17c44a592ace607f6d26
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Platinum Sign
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 18f576abe42ec8540ac8067f687fe119, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

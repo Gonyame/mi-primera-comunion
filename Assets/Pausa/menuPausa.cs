@@ -42,6 +42,8 @@ public class menuPausa : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("Jaz");
+        juegoPausado = false;
+        Time.timeScale = 1f;
     }
 
     public void Quit()

@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Spikes"))
+        if (other.gameObject.CompareTag("Spikes") && isDashing==false)
         {
             muerteSpikes();
         }
@@ -106,7 +106,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Spikes"))
+        if (collision.gameObject.CompareTag("Spikes") && isDashing == false)
+        {
+            muerteSpikes();
+        }
+        if (collision.gameObject.CompareTag("cuchillas"))
         {
             muerteSpikes();
         }

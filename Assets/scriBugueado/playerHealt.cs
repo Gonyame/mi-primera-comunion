@@ -20,6 +20,16 @@ public class playerHealt : MonoBehaviour
         if(collision.gameObject.CompareTag("oso"))
         {
             PlayerController.instance.atrapado();
+            transform.position = collision.transform.position + new Vector3(0f, 0f, 0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("oso"))
+        {
+            PlayerController.instance.atrapado();
+            transform.position = collision.transform.position + new Vector3(0f, 0f, 0f);
         }
     }
 }

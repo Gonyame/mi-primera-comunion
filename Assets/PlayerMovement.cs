@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject spawnpoint;
     private bool morido;
+    
 
     private Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
             anim.SetBool("Moving", moveDirection != Vector2.zero);
+            
 
             if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimeLeft <= 0f)
             {

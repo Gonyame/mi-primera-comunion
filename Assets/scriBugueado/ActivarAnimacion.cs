@@ -8,6 +8,7 @@ public class ActivarAnimacion : MonoBehaviour
     private Animator animator;
     private Animator anim;
 
+
     void Start()
     {
         anim = objetoAnimado.GetComponent<Animator>();
@@ -36,5 +37,9 @@ public class ActivarAnimacion : MonoBehaviour
     {
         anim.SetTrigger("abreTrampa");
         Debug.Log("ChambeaAri");
+    }
+    public void vddabrirtrampa()
+    {
+
     }
 }

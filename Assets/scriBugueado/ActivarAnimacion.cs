@@ -29,7 +29,6 @@ public class ActivarAnimacion : MonoBehaviour
         {
             //animator.SetTrigger("ActivarAnimacion");
             anim.SetTrigger("cerrandotrampa");
-
         }
     }
 

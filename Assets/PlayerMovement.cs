@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float dashCooldownTimeLeft;
     public bool atrapao;
     public int forcejeo;
+    public ActivarAnimacion trampaOso;
 
     //unity event
     public UnityEvent OnDash, OnDeadSpikes;
@@ -149,5 +150,6 @@ public class PlayerController : MonoBehaviour
       //  PlayerController.instance.atrapado();
        moveSpeed = 5f;
         atrapao = false;
+        trampaOso.AbreTrampa();
     }
 }

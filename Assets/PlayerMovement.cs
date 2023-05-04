@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     //unity event
     public UnityEvent OnDash, OnDeadSpikes;
 
+    //pruebaCongelacionDash
+    Transform trappedPos;
+
     private void Awake()
     {
         instance = this;
@@ -92,11 +95,16 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+
+        if (atrapao) { rb.velocity=Vector2.zero; }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = isDashing ? moveDirection * dashSpeed : moveDirection * moveSpeed;
+        if (!atrapao)
+        {
+            rb.velocity = isDashing ? moveDirection * dashSpeed : moveDirection * moveSpeed;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -116,6 +124,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("cuchillas"))
         {
             muerteSpikes();
+        }
+
+        if (collision.gameObject.CompareTag("oso"))
+        {
+            transform.position = collision.transform.position;
+            atrapado();        
         }
     }
 
@@ -143,12 +157,11 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Moving", false);
         moveSpeed = 0;
         forcejeo = 3;
-
     }
     public void safarse()
     {
       //  PlayerController.instance.atrapado();
-       moveSpeed = 5f;
+        moveSpeed = 5f;
         atrapao = false;
         trampaOso.AbreTrampa();
     }

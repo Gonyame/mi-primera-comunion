@@ -45,10 +45,8 @@ public class HackError044 : MonoBehaviour
           isClose = true;
             forzar = 3;
         }
-
-
-
     }
+
     public void ResetTrap()
     {
         antram.SetTrigger("Idle");

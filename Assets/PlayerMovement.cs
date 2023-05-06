@@ -163,6 +163,6 @@ public class PlayerController : MonoBehaviour
       //  PlayerController.instance.atrapado();
         moveSpeed = 5f;
         atrapao = false;
-        trampaOso.AbreTrampa();
+//        trampaOso.AbreTrampa();
     }
 }

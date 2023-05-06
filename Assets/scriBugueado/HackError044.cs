@@ -8,6 +8,8 @@ public class HackError044 : MonoBehaviour
     bool isClose;
     public Animator antram;
     private int forzar;
+    public GameObject cajasonido;
+    
     
 
     void Start()
@@ -21,6 +23,8 @@ public class HackError044 : MonoBehaviour
         if (isClose)
         {
             antram.SetBool("Close", true);
+            //cajasonido.SetActive(true);
+        
 
             if(forzar > 0 )
             {
@@ -28,6 +32,7 @@ public class HackError044 : MonoBehaviour
                 {
                     forzar--;
                 }
+
             }
 
             if (forzar == 0)
@@ -36,6 +41,8 @@ public class HackError044 : MonoBehaviour
 
             }    
         }
+   
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,11 +51,24 @@ public class HackError044 : MonoBehaviour
         {
           isClose = true;
             forzar = 3;
+            StartCoroutine(soundcicle());
+
         }
+
+
     }
 
     public void ResetTrap()
     {
         antram.SetTrigger("Idle");
     }
+
+    IEnumerator soundcicle()
+    {
+        cajasonido.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        cajasonido.SetActive(false);
+    }
+   
+ 
 }

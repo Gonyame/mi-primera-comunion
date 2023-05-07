@@ -9,6 +9,7 @@ public class HackError044 : MonoBehaviour
     public Animator antram;
     private int forzar;
     public GameObject cajasonido;
+    //public GameObject boxsonido;
     
     
 
@@ -69,6 +70,16 @@ public class HackError044 : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         cajasonido.SetActive(false);
     }
-   
+   /*public void sonidochido()
+    {
+        StartCoroutine(soundciclee());
+    }
+
+    IEnumerator soundciclee()
+    {
+        boxsonido.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        boxsonido.SetActive(false);
+    }*/
  
 }

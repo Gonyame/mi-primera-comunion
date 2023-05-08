@@ -131,6 +131,10 @@ public class PlayerController : MonoBehaviour
             transform.position = collision.transform.position;
             atrapado();        
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            muerteSpikes();
+        }
     }
 
     private void muerteSpikes()

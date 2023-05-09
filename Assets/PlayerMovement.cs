@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject spawnpoint;
-    private bool morido;
+    public bool morido;
     
 
     private Rigidbody2D rb;

@@ -10,10 +10,13 @@ public class enemy : MonoBehaviour
     public float stoppingDistance = 1f;
     private bool isFollowing = false;
     Animator animacion;
+    public Vector3 posInicial;
+    public PlayerController playerController;
 
     private void Start()
     {
         animacion = GetComponent<Animator>();
+        posInicial = transform.position;
     }
 
     void Update()
@@ -41,6 +44,11 @@ public class enemy : MonoBehaviour
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (playerController.morido)
+        {
+            transform.position = posInicial;
         }
     }
 }

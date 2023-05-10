@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public int forcejeo;
     public ActivarAnimacion trampaOso;
 
+    public Timer tiemporly;
+
     //unity event
     public UnityEvent OnDash, OnDeadSpikes;
 
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void muerteSpikes()
+    public void muerteSpikes()
     {
         
             morido = true;
@@ -154,6 +156,8 @@ public class PlayerController : MonoBehaviour
         morido = false;
         anim.SetBool("dead", morido);
         transform.position = spawnpoint.transform.position;
+
+        tiemporly.currentTime = tiemporly.tiemporesetorly;
     }
     public void atrapado()
     {
